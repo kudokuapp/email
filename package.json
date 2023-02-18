@@ -20,10 +20,13 @@
 		"@react-email/preview": "0.0.5",
 		"@react-email/row": "^0.0.3",
 		"@react-email/section": "0.0.8",
+		"@react-email/tailwind": "0.0.4",
 		"@react-email/text": "0.0.4",
 		"react-email": "1.7.13"
 	},
 	"devDependencies": {
-		"@types/node": "^18.14.0"
+		"@types/node": "^18.14.0",
+		"@types/react": "^18.0.28",
+		"prettier": "^2.8.4"
 	}
 }
