@@ -10,7 +10,6 @@ import { Section } from '@react-email/section';
 import { Img } from '@react-email/img';
 import { Hr } from '@react-email/hr';
 import { Text } from '@react-email/text';
-import { Link } from '@react-email/link';
 
 const baseUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
@@ -94,10 +93,6 @@ const paragraph = {
   fontSize: '16px',
   lineHeight: '24px',
   textAlign: 'left' as const,
-};
-
-const anchor = {
-  color: '#556cd6',
 };
 
 const button = {
