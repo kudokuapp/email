@@ -57,7 +57,7 @@ export default function Email({
               untuk email balik ke gua yaa. Tinggal reply aja email ini pasti
               gua bales!
             </Text>
-            <Text style={paragraph}>-Furqon</Text>
+            <Text style={paragraph}>- Furqon</Text>
             <Text style={footer}>PT. Kudoku Finansial Indonesia</Text>
           </Section>
         </Container>
