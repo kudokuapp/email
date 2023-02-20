@@ -11,9 +11,7 @@ import { Img } from '@react-email/img';
 import { Hr } from '@react-email/hr';
 import { Text } from '@react-email/text';
 
-const baseUrl = process.env.VERCEL_URL
-  ? `https://${process.env.VERCEL_URL}`
-  : '';
+const url = 'https://drive.google.com/uc?id=1ePzW3lbfFIb2RlpnqMFyyv9QqlQHipYu';
 
 export default function Email({
   kudosNo = 1,
@@ -27,12 +25,7 @@ export default function Email({
       <Body style={main}>
         <Container style={container}>
           <Section style={box}>
-            <Img
-              src={`${baseUrl}/static/bgst.png`}
-              width="78"
-              height="25"
-              alt="BGST"
-            />
+            <Img src={url} width="78" height="25" alt="BGST" />
             <Hr style={hr} />
             <Text style={paragraph}>Heyy Kudos No. {kudosNo}</Text>
             <Text style={paragraph}>
