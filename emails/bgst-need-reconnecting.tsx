@@ -13,23 +13,17 @@ import { Text } from '@react-email/text';
 
 const url = 'https://drive.google.com/uc?id=1ePzW3lbfFIb2RlpnqMFyyv9QqlQHipYu';
 
-export default function Email({
-  firstName = 'Furqon',
-  kudosNo = 1,
-  month = 'January 2023',
-}) {
+export default function Email({ kudosNo = 1, month = 'January 2023' }) {
   return (
     <Html>
       <Head />
-      <Preview>Laporan BGST kamu udah siap!</Preview>
+      <Preview>❗️Ada akun kamu yang butuh login kembali di BGST!</Preview>
       <Body style={main}>
         <Container style={container}>
           <Section style={box}>
             <Img src={url} width="78" height="25" alt="BGST" />
             <Hr style={hr} />
-            <Text style={paragraph}>
-              Heyy ${firstName}, Kudos No. {kudosNo}!
-            </Text>
+            <Text style={paragraph}>Heyy Kudos No. {kudosNo}</Text>
             <Text style={paragraph}>
               Laporan BGST kamu bulan <strong>{month}</strong> udah tersedia
               nih.
