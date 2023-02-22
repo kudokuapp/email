@@ -1,63 +1,63 @@
-import UseTailwind from './tailwind';
-import { Button } from '@react-email/button';
-import React from 'react';
-import { Html } from '@react-email/html';
-import { Head } from '@react-email/head';
-import { Preview } from '@react-email/preview';
 import { Body } from '@react-email/body';
+import { Button } from '@react-email/button';
 import { Container } from '@react-email/container';
-import { Section } from '@react-email/section';
+import { Head } from '@react-email/head';
+import { Html } from '@react-email/html';
 import { Img } from '@react-email/img';
-import { Hr } from '@react-email/hr';
+import { Preview } from '@react-email/preview';
+import { Section } from '@react-email/section';
 import { Text } from '@react-email/text';
+import * as React from 'react';
+
+interface EmailProps {
+  firstName: string;
+  account: string;
+  kudosId: number;
+}
 
 const url = 'https://drive.google.com/uc?id=1ePzW3lbfFIb2RlpnqMFyyv9QqlQHipYu';
 
-export default function Email({ kudosNo = 1, month = 'January 2023' }) {
+export default function Email({
+  firstName = 'Furqon',
+  account = 'Gopay',
+  kudosId = 1,
+}: EmailProps) {
   return (
     <Html>
       <Head />
-      <Preview>❗️Ada akun kamu yang butuh login kembali di BGST!</Preview>
+      <Preview>❗️Ada akun Bank/E-Wallet kamu yang gabisa di BGST</Preview>
       <Body style={main}>
         <Container style={container}>
-          <Section style={box}>
-            <Img src={url} width="78" height="25" alt="BGST" />
-            <Hr style={hr} />
-            <Text style={paragraph}>Heyy Kudos No. {kudosNo}</Text>
-            <Text style={paragraph}>
-              Laporan BGST kamu bulan <strong>{month}</strong> udah tersedia
-              nih.
+          <Img src={url} width="78" height="25" alt="BGST" />
+
+          <Text style={title}>
+            ❗️<strong>{firstName}</strong>, kamu butuh login kembali akun{' '}
+            {account} kamu ke BGST
+          </Text>
+
+          <Section style={section}>
+            <Text style={text}>
+              Hey{' '}
+              <strong>
+                {firstName}, Kudos No. {kudosId}
+              </strong>
+              !
             </Text>
-            <Text style={paragraph}>
-              Akun Bank/E-Wallet yang sudah kamu <em>connect</em> ke BGST dan
-              sudah tersedia laporannya itu ada:
-              <ol style={paragraph}>
-                <li>BCA</li>
-                <li>Mandiri</li>
-                <li>Gopay</li>
-              </ol>
+            <Text style={text}>
+              <strong>Akun {account} kamu perlu login kembali</strong> di BGST.
+              Jangan khawatir, abis kamu login kembali, laporan bulanan kamu
+              yang paling baru langsung siap buat kamu.
             </Text>
-            <Text style={paragraph}>
-              Penasaran kan bulan {month} kamu gimana? Yuk buruan cek BGST
-              sekarang!
-            </Text>
+
             <Button
-              pX={10}
-              pY={10}
               style={button}
-              href="https://bgst.kudoku.id/t"
+              href={`https://bgst.kudoku.id/connect/${account}`}
             >
-              Cek laporan BGST
+              Login kembali akun {account}
             </Button>
-            <Hr style={hr} />
-            <Text style={paragraph}>
-              Kalo ada bug, error, atau feature request, jangan sungkan-sungkan
-              untuk email balik ke gua yaa. Tinggal reply aja email ini pasti
-              gua bales!
-            </Text>
-            <Text style={paragraph}>- Furqon</Text>
-            <Text style={footer}>PT. Kudoku Finansial Indonesia</Text>
           </Section>
+
+          <Text style={footer}>PT. Kudoku Finansial Indonesia</Text>
         </Container>
       </Body>
     </Html>
@@ -65,49 +65,47 @@ export default function Email({ kudosNo = 1, month = 'January 2023' }) {
 }
 
 const main = {
-  backgroundColor: '#f6f9fc',
+  backgroundColor: '#ffffff',
+  color: '#24292e',
   fontFamily:
-    '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Ubuntu,sans-serif',
+    '-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji"',
 };
 
 const container = {
-  backgroundColor: '#ffffff',
+  width: '480px',
   margin: '0 auto',
   padding: '20px 0 48px',
-  marginBottom: '64px',
 };
 
-const box = {
-  padding: '0 48px',
+const title = {
+  fontSize: '24px',
+  lineHeight: 1.25,
 };
 
-const hr = {
-  borderColor: '#e6ebf1',
-  margin: '20px 0',
+const section = {
+  padding: '24px',
+  border: 'solid 1px #dedede',
+  borderRadius: '5px',
+  textAlign: 'center' as const,
 };
 
-const paragraph = {
-  color: '#525f7f',
-
-  fontSize: '16px',
-  lineHeight: '24px',
+const text = {
+  margin: '0 0 10px 0',
   textAlign: 'left' as const,
 };
 
 const button = {
+  fontSize: '14px',
   backgroundColor: '#2C5EA8',
-  borderRadius: '5px',
   color: '#fff',
-  fontSize: '16px',
-  fontWeight: 'bold',
-  textDecoration: 'none',
-  textAlign: 'center' as const,
-  display: 'block',
-  width: '100%',
+  lineHeight: 1.5,
+  borderRadius: '0.5em',
+  padding: '0.75em 1.5em',
 };
 
 const footer = {
-  color: '#8898aa',
+  color: '#6a737d',
   fontSize: '12px',
-  lineHeight: '16px',
+  textAlign: 'center' as const,
+  marginTop: '60px',
 };
