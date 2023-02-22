@@ -28,7 +28,7 @@ export default function Email({
             <Img src={url} width="78" height="25" alt="BGST" />
             <Hr style={hr} />
             <Text style={paragraph}>
-              Heyy ${firstName}, Kudos No. {kudosNo}!
+              Heyy {firstName}, Kudos No. {kudosNo}!
             </Text>
             <Text style={paragraph}>
               Laporan BGST kamu bulan <strong>{month}</strong> udah tersedia
