@@ -28,7 +28,7 @@ export default function Email({ firstName = 'Furqon', kudosNo = 1 }) {
 
           <Section style={box}>
             <Text style={paragraphBig}>
-              📣 Kamu officially Kudos No. {kudosNo}! 🥳 🎉
+              📣 Kamu officially Kudos No. <strong>{kudosNo}</strong>! 🥳 🎉
             </Text>
 
             <Img
