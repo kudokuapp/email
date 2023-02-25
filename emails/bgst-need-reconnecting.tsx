@@ -13,6 +13,7 @@ interface EmailProps {
   firstName: string;
   account: string;
   kudosId: number;
+  link: string;
 }
 
 const url = 'https://drive.google.com/uc?id=1ePzW3lbfFIb2RlpnqMFyyv9QqlQHipYu';
@@ -21,6 +22,7 @@ export default function Email({
   firstName = 'Furqon',
   account = 'Gopay',
   kudosId = 1,
+  link = 'https://bgst.kudoku.id/account/connect/gopay',
 }: EmailProps) {
   return (
     <Html>
@@ -49,10 +51,7 @@ export default function Email({
               yang paling baru langsung siap buat kamu.
             </Text>
 
-            <Button
-              style={button}
-              href={`https://bgst.kudoku.id/connect/${account}`}
-            >
+            <Button style={button} href={link}>
               Login kembali akun {account}
             </Button>
           </Section>
